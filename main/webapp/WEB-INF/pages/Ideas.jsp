@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: dineshkb
-  Date: 1/10/14
-  Time: 2:37 PM
+  Date: 1/13/14
+  Time: 3:16 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,6 +11,21 @@
     <title></title>
 </head>
 <body>
-<head1>Hello User , ${message}</head1>>
+
+<table>
+
+    <tr>
+        <td>
+            Enter the purpose:
+        </td>
+        <td>
+            <input type="text" name="purpose" id="userName"> </input>
+        </td>
+    </tr>
+</table>
+
+
+
+
 </body>
 </html>
