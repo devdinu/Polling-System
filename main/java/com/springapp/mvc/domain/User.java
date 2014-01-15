@@ -12,7 +12,7 @@ public class User {
 
     @Override
     public String toString() {
-        return name+ ", "+id+", "+password;
+        return name + ", " + id + ", " + password;
     }
 
     private String name;

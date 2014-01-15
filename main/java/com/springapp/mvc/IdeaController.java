@@ -1,0 +1,22 @@
+package com.springapp.mvc;
+
+import com.springapp.mvc.domain.Idea;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+/**
+ * Created by dineshkb on 1/15/14.
+ */
+@Controller
+@RequestMapping("Idea")
+public class IdeaController {
+
+    @RequestMapping(value = "postIdea", method = RequestMethod.POST)
+    public String postIdea(ModelMap modMap, Idea idea) {
+        System.out.println(idea);
+        modMap.addAttribute("message", "Posted Idea successfully. " + idea);
+        return "view";
+    }
+}

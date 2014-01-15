@@ -1,5 +1,3 @@
-<%@ page import="java.util.Scanner" %>
-<%@ page import="com.springapp.mvc.domain.User" %>
 <%--
   Created by IntelliJ IDEA.
   User: dineshkb
@@ -40,7 +38,7 @@
             </td>
         </tr>
         <tr>
-            <td>Password: </td>
+            <td>Password:</td>
             <td>
                 <input type="PASSWORD" name="password" id="userPwd"> </input>
             </td>
@@ -48,7 +46,7 @@
 
         <tr>
             <td>
-                <button id="submit" value="gooo" autofocus="true">
+                <button id="submit" value="go." autofocus="true">
                     Go...
                 </button>
             </td>

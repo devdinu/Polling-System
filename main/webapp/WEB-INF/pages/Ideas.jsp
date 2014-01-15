@@ -12,20 +12,43 @@
 </head>
 <body>
 
-<table>
+<h3> welcome, ${user.name} .</h3>
+<h4> Post Your Ideas...</h4>
 
-    <tr>
-        <td>
-            Enter the purpose:
-        </td>
-        <td>
-            <input type="text" name="purpose" id="userName"> </input>
-        </td>
-    </tr>
-</table>
+<form id="ideas" method="post" action="/Idea/postIdea">
+
+    <table>
+
+        <tr>
+            <td>
+                Enter the purpose:
+            </td>
+            <td>
+                <input type="text" name="purpose" id="userName"> </input>
+            </td>
+        </tr>
 
 
+        <tr>
+            <td>
+                Enter your Idea:
+            </td>
+            <td>
+                <input type="text" name="description" id="idea"> </input>
+            </td>
+        </tr>
 
+        <tr>
+            <td>
+                <input type="submit" value="Submit">
+
+            </td>
+
+        </tr>
+    </table>
+    <input type="hidden" name="user" value=${user.name}>
+
+</form>
 
 </body>
 </html>
