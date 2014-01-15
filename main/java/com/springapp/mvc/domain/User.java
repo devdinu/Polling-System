@@ -1,13 +1,8 @@
 package com.springapp.mvc.domain;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-
 /**
  * Created by dineshkb on 1/10/14.
  */
-@Controller
-@RequestMapping("/")
 public class User {
 
     @Override
@@ -16,7 +11,7 @@ public class User {
     }
 
     private String name;
-    private String id;
+    private int id;
     private String password;
 
     public String getPassword() {
@@ -31,15 +26,16 @@ public class User {
         return name;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 }

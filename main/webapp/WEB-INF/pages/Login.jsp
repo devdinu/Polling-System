@@ -45,12 +45,18 @@
         </tr>
 
         <tr>
+            <td><input type="radio" value="sign_in" name="userStatus"> Sign in</td>
+            <td><input type="radio" value="sing_up" name="userStatus"> Sign up</td>
+        </tr>
+
+        <tr>
             <td>
                 <button id="submit" value="go." autofocus="true">
                     Go...
                 </button>
             </td>
         </tr>
+
     </table>
 
 </form>
