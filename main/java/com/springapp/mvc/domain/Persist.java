@@ -3,24 +3,21 @@ package com.springapp.mvc.domain;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class Persist  {
+public class Persist {
 
     @Autowired
     SessionFactory sessionFactory;
 
-    public void store(Idea idea) {
-        Session session = sessionFactory.openSession();
+    public Idea create(Idea idea) {
+        Session session = sessionFactory.getCurrentSession();
+        Transaction trans = session.beginTransaction();
         session.save(idea);
-    }
-
-    public Idea retrieve() {
-        Idea idea = null;
+        trans.commit();
         return idea;
     }
-
-
 }
