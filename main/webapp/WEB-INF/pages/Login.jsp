@@ -23,6 +23,15 @@
 
 <form name="Welcome" id="welcome" method="post" action="/Home/login">
     <table>
+
+
+        <tr>
+            <td>log with </td>
+            <td><input type="radio" value="userId" name="credential"> User Id</td>
+            <td><input type="radio" value="userName" name="credential"> User Name</td>
+        </tr>
+
+        <hr>
         <tr>
             <td>
                 Enter your Name:
@@ -48,6 +57,8 @@
             <td><input type="radio" value="sign_in" name="userStatus"> Sign in</td>
             <td><input type="radio" value="sing_up" name="userStatus"> Sign up</td>
         </tr>
+
+
 
         <tr>
             <td>

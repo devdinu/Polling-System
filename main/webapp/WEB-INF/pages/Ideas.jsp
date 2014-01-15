@@ -46,8 +46,8 @@
 
         </tr>
     </table>
-    <input type="hidden" name="user" value=${user.name}>
-
+    <input type="hidden" name="userName" value=${user.name}>
+    <input type="hidden" name="userId" value=${user.id}>
 </form>
 
 </body>

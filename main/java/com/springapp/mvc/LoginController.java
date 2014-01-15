@@ -17,16 +17,20 @@ public class LoginController {
     UserService userService;
 
     @RequestMapping(value = "login", method = RequestMethod.POST)
-    public ModelAndView printWelcome(User user, ModelMap model, @RequestParam("userStatus") String userStatus) {
+    public ModelAndView printWelcome(User user, ModelMap model, @RequestParam("userStatus") String userStatus,@RequestParam("credential") String credential) {
         boolean authenticated = false;
         model.addAttribute("message", "Hi " + user + " " + userStatus);
         if (userStatus.equalsIgnoreCase("sign_in")) {
-            System.out.println("validating");
-            if (userService.validate(user.getId())) {
+            //validate user
+            //should call based on input with name or id
+            //default id now
+
+            if ((credential.equals("userId") && userService.validate(user.getId(), user.getPassword()))
+                    ||
+                    (userService.validate(user.getName(), user.getPassword()))) {
                 authenticated = true;
             }
 
-            //validate user
 
         } else {
             //new user create credentials
@@ -36,7 +40,7 @@ public class LoginController {
         if (authenticated)
             return new ModelAndView("Ideas", "user", user);
         else
-            return new ModelAndView("Login", "message", "login attemp failed");
+            return new ModelAndView("Login", "message", "login attempt failed");
     }
 }
 

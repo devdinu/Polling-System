@@ -4,14 +4,24 @@
 <!-- Generated Aug 2, 2013 2:21:57 AM by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
 
+
+    <!--column name maps to name in table DB -->
+
     <class name="com.springapp.mvc.domain.Idea" table="Ideas">
         <id name="id" type="int">
             <column name="Id" />
             <generator class="identity" />
         </id>
+
+
         <property name="description" type="java.lang.String">
             <column name="Description" />
         </property>
+
+        <property name="userId" type="int">
+            <column name="UserID" />
+        </property>
+
         <property name="purpose" type="java.lang.String">
             <column name="Purpose" />
         </property>

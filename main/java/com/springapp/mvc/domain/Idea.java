@@ -7,11 +7,20 @@ public class Idea {
     private int id;
     private String description;
     private String purpose;
-    private String user;
+    private String userName;
+    private int userId;
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 
     @Override
     public String toString() {
-        return description + ", [" + purpose + "] " + user;
+        return description + ", [" + purpose + "] " + userName;
     }
 
     public void setId(int id) {
@@ -26,8 +35,8 @@ public class Idea {
         this.purpose = purpose;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUserName(String user) {
+        this.userName = user;
     }
 
     public int getId() {
@@ -42,7 +51,7 @@ public class Idea {
         return purpose;
     }
 
-    public String getUser() {
-        return user;
+    public String getUserName() {
+        return userName;
     }
 }
