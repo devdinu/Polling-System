@@ -16,7 +16,7 @@ public class UserRepository extends RepositoryHandler {
         return user;
     }
 
-    public User retreiveUser(int userId) {
+    public User retrieveUser(int userId) {
         begin();
         User retrievedUser = super.retrieve(userId);
         end();
