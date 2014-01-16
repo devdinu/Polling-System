@@ -18,6 +18,10 @@
             <column name="Description" />
         </property>
 
+        <property name="totalPolls" type="int">
+            <column name="TotalPolls"/>
+        </property>
+
         <property name="userId" type="int">
             <column name="UserID" />
         </property>

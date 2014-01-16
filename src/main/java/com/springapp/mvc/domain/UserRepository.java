@@ -10,16 +10,12 @@ import org.springframework.stereotype.Repository;
 public class UserRepository extends RepositoryHandler {
 
     public User createUser(User user) {
-        begin();
         create(user);
-        end();
         return user;
     }
 
     public User retrieveUser(int userId) {
-        begin();
-        User retrievedUser = super.retrieve(userId);
-        end();
+        User retrievedUser = retrieve(userId);
         return retrievedUser;
     }
 }

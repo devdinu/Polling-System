@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -24,16 +25,22 @@ public class IdeaController {
     public String postIdea(ModelMap modMap, Idea idea) {
         ideaService.create(idea);
         modMap.addAttribute("message", "Posted Idea successfully. " + idea);
-        return "view";
+        return "View";
     }
 
     @RequestMapping(value = "listIdeas", method = RequestMethod.GET)
     public String listIdeas(ModelMap modMap, Idea idea) {
         List<Idea> ideaList = ideaService.list();
-        System.out.println(ideaList);
         modMap.addAttribute("ideas", ideaList);
         modMap.addAttribute("ideasCount", ideaList.size());
-        return "view";
+        return "View";
     }
 
+    @RequestMapping(value = "pollIdea",method = RequestMethod.POST)
+    public String pollIdea(ModelMap modelMap,@RequestParam("chosenIdea") int ideaId)
+    {
+        ideaService.poll(ideaId);
+        modelMap.addAttribute("message","Poll Success");
+        return "Status";
+    }
 }

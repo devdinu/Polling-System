@@ -14,32 +14,24 @@ public class RepositoryHandler<T> {
     @Autowired
     SessionFactory sessionFactory;
 
-    Transaction trans;
-    Session session;
-
-    public void begin() {
-        session = sessionFactory.getCurrentSession();
-        trans = session.beginTransaction();
+    public Session session() {
+        return sessionFactory.getCurrentSession();
     }
 
     public T create(T object) {
-        session.save(object);
+        session().save(object);
         return object;
     }
 
-    public void end() {
-        trans.commit();
-    }
-
     public User retrieve(int userId) {
-        Query query = session.createQuery("from User where id=:userid");
+        Query query = session().createQuery("from User where id=:userid");
         query.setInteger("userid", userId);
         return (User) query.uniqueResult();
     }
 
     public User retrieve(String userName) {
-        Query query = session.createQuery("from User where name=:userName");
-        query.setString(userName, userName);
+        Query query = session().createQuery("from User where name=:userName");
+        query.setString("userName", userName);
         return (User) query.uniqueResult();
     }
 }

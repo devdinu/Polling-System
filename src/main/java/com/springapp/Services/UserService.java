@@ -4,12 +4,8 @@ import com.springapp.mvc.domain.User;
 import com.springapp.mvc.domain.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
-
-/**
- * Created by dineshkb on 1/15/14.
- */
 @Service
 public class UserService {
 
@@ -31,11 +27,10 @@ public class UserService {
         return userRepository.retrieve(name);
     }
 
-
+    @Transactional
     public boolean validate(int id, String password) {
         User userMatchedID = retrieve(id);
         if (userMatchedID == null) {
-            System.out.println("userid not exists");
             return false;
         }
         if (userMatchedID.getPassword().equals(password)) {
@@ -44,11 +39,10 @@ public class UserService {
         return false;
     }
 
+    @Transactional
     public boolean validate(String name, String password) {
         User userMatchedID = retrieve(name);
-        System.out.println(userMatchedID);
         if (userMatchedID == null) {
-            System.out.println("userid not exists");
             return false;
         }
         if (userMatchedID.getPassword().equals(password)) {

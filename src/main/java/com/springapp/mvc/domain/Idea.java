@@ -4,11 +4,21 @@ package com.springapp.mvc.domain;
  * Created by dineshkb on 1/15/14.
  */
 public class Idea {
+
     private int id;
     private String description;
     private String purpose;
     private String userName;
     private int userId;
+    private int totalPolls = 0;
+
+    public int getTotalPolls() {
+        return totalPolls;
+    }
+
+    public void setTotalPolls(int totalPolls) {
+        this.totalPolls = totalPolls;
+    }
 
     public int getUserId() {
         return userId;
@@ -20,7 +30,11 @@ public class Idea {
 
     @Override
     public String toString() {
-        return description + ", [" + purpose + "] " + userName;
+        return purpose + ": '" + description + "' [" + userId + "], PollCount: " + totalPolls;
+    }
+
+    public void poll() {
+        totalPolls++;
     }
 
     public void setId(int id) {

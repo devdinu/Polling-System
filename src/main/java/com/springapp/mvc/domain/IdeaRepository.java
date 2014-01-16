@@ -10,17 +10,27 @@ import java.util.List;
 public class IdeaRepository extends RepositoryHandler {
 
     public Idea creteIdea(Idea idea) {
-        begin();
         create(idea);
-        end();
         return idea;
     }
 
     public List<Idea> list() {
-        begin();
-        Query query = session.createQuery("From Idea");
-        List<Idea>ideaList = query.list();
-        end();
+        Query query = session().createQuery("From Idea");
+        List<Idea> ideaList = query.list();
         return ideaList;
+    }
+
+    public Idea getIdea(int ideaId) {
+        Query query = session().createQuery("from Idea where id=:ideaId");
+        query.setInteger("ideaId", ideaId);
+        return (Idea) query.uniqueResult();
+    }
+
+
+    public void poll(int ideaId) {
+        Idea polledIdea = getIdea(ideaId);
+        polledIdea.poll();
+        System.out.println(polledIdea);
+        session().update(polledIdea);
     }
 }
