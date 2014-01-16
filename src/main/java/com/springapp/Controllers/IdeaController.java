@@ -36,11 +36,10 @@ public class IdeaController {
         return "View";
     }
 
-    @RequestMapping(value = "pollIdea",method = RequestMethod.POST)
-    public String pollIdea(ModelMap modelMap,@RequestParam("chosenIdea") int ideaId)
-    {
+    @RequestMapping(value = "pollIdea", method = RequestMethod.POST)
+    public String pollIdea(ModelMap modelMap, @RequestParam("chosenIdea") int ideaId) {
         ideaService.poll(ideaId);
-        modelMap.addAttribute("message","Poll Success");
+        modelMap.addAttribute("message", "Poll Success");
         return "Status";
     }
 }

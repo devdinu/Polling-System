@@ -18,7 +18,7 @@ public class LoginController {
     UserService userService;
 
     @RequestMapping(value = "login", method = RequestMethod.POST)
-    public ModelAndView printWelcome(User user, ModelMap model, @RequestParam("userStatus") String userStatus,@RequestParam("credential") String credential) {
+    public ModelAndView printWelcome(User user, ModelMap model, @RequestParam("userStatus") String userStatus, @RequestParam("credential") String credential, String pollType) {
         boolean authenticated = false;
         model.addAttribute("message", "Hi " + user + " " + userStatus);
         if (userStatus.equalsIgnoreCase("sign_in")) {
@@ -37,9 +37,12 @@ public class LoginController {
             userService.creUser(user);
             authenticated = true;
         }
-        if (authenticated)
-            return new ModelAndView("Ideas", "user", user);
-        else
+        if (authenticated) {
+            if (pollType.equals("poll"))
+                return new ModelAndView("Ideas", "user", user);
+            else //(pollType.equals("post"))
+                return new ModelAndView("View");
+        } else
             return new ModelAndView("Login", "message", "login attempt failed");
     }
 }
