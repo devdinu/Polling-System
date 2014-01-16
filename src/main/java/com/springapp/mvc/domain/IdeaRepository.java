@@ -17,8 +17,10 @@ public class IdeaRepository extends RepositoryHandler {
     }
 
     public List<Idea> list() {
+        begin();
         Query query = session.createQuery("From Idea");
         List<Idea>ideaList = query.list();
+        end();
         return ideaList;
     }
 }

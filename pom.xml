@@ -11,6 +11,10 @@
         <spring.version>3.2.0.RELEASE</spring.version>
     </properties>
 
+    <properties>
+        <jstl.version>1.2</jstl.version>
+    </properties>
+
 
     <dependencies>
 
@@ -77,6 +81,22 @@
             <version>2.5</version>
         </dependency>
 
+
+<!-- dependency not downloading jstl
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+            <version>1.1.2</version>
+            <scope>compile</scope>
+        </dependency>
+-->
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>jsp-api</artifactId>
