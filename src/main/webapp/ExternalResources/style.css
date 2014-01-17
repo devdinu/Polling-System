@@ -1,4 +1,9 @@
 
+body {
+    font-size: medium;
+    font-family: Serif;
+}
+
 h1 {
     background: border-box;
     background-color: skyblue;
