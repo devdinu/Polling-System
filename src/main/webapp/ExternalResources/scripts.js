@@ -16,3 +16,19 @@ function checkControls() {
 }
 
 
+function hideLogin()
+{
+    document.getElementById("loginWithOption").style.visibility='hidden';
+    document.getElementById("IdControl").style.visibility='hidden';
+}
+
+function showLogin()
+{
+    //$("#loginWithOptin").show();
+    document.getElementById("IdControl").style.visibility='visible';
+    document.getElementById("NameControl").style.visibility='visible';
+
+    document.getElementById("loginWithOption").style.visibility='visible';
+    document.getElementById("IdControl").style.visibility='visible';
+}
+

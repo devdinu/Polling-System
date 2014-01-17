@@ -30,7 +30,7 @@
     <table>
 
 
-        <tr>
+        <tr id="loginWithOption">
             <td>log with</td>
             <td><input type="radio" value="userId" name="credential" onclick="showIdControl()"> User Id</td>
             <td><input type="radio" value="userName" name="credential" onclick="showNameControl()"> User Name</td>
@@ -44,7 +44,7 @@
             <td>
                 <input type="text" name="name" id="userName"> </input>
             </td>
-        </tr>
+        </tr >
         <tr id="IdControl">
             <td>Id:</td>
             <td>
@@ -59,8 +59,8 @@
         </tr>
 
         <tr align="justify">
-            <td><input type="radio" value="sign_in" name="userStatus"> Sign in</td>
-            <td><input type="radio" value="sing_up" name="userStatus"> Sign up</td>
+            <td><input type="radio" value="sign_in" name="userStatus" onclick="showLogin()"> Sign in</td>
+            <td><input type="radio" value="sing_up" name="userStatus" onclick="hideLogin()"> Sign up</td>
         </tr>
 
         <tr align="justify">

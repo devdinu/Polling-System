@@ -23,15 +23,4 @@ public class RepositoryHandler<T> {
         return object;
     }
 
-    public User retrieve(int userId) {
-        Query query = session().createQuery("from User where id=:userid");
-        query.setInteger("userid", userId);
-        return (User) query.uniqueResult();
-    }
-
-    public User retrieve(String userName) {
-        Query query = session().createQuery("from User where name=:userName");
-        query.setString("userName", userName);
-        return (User) query.uniqueResult();
-    }
 }
