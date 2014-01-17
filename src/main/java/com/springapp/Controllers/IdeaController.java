@@ -25,7 +25,7 @@ public class IdeaController {
     public String postIdea(ModelMap modMap, Idea idea) {
         ideaService.create(idea);
         modMap.addAttribute("message", "Posted Idea successfully. " + idea);
-        return "View";
+        return "ViewIdeas";
     }
 
     @RequestMapping(value = "listIdeas", method = RequestMethod.GET)
@@ -33,7 +33,7 @@ public class IdeaController {
         List<Idea> ideaList = ideaService.list();
         modMap.addAttribute("ideas", ideaList);
         modMap.addAttribute("ideasCount", ideaList.size());
-        return "View";
+        return "ViewIdeas";
     }
 
     @RequestMapping(value = "pollIdea", method = RequestMethod.POST)

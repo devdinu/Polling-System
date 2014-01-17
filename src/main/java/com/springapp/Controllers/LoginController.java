@@ -39,9 +39,9 @@ public class LoginController {
         }
         if (authenticated) {
             if (pollType.equals("poll"))
-                return new ModelAndView("Ideas", "user", user);
+                return new ModelAndView("PostIdea", "user", user);
             else //(pollType.equals("post"))
-                return new ModelAndView("View");
+                return new ModelAndView("ViewIdeas");
         } else
             return new ModelAndView("Login", "message", "login attempt failed");
     }

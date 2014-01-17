@@ -1,0 +1,17 @@
+
+h1 {
+    background: border-box;
+    background-color: skyblue;
+    color: azure;
+    align-content: center;
+    align-self: center;
+}
+
+button {
+    color: skyblue;
+}
+
+h3 {
+    color: brown;
+}
+

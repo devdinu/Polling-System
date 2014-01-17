@@ -7,32 +7,58 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title></title>
-</head>
-<body>
-<head1>${message}</head1>
-
-<br>
-<hr>
-<%
-    out.println("Welcome to polling. Give your ideas or poll for ideas");
-%>
-
-<br>
 
 <script language="javascript" type="text/javascript">
 
-    function showIdControl() {
-        document.getElementById('IdControl').style.visibility = 'visible'
-        document.getElementById('NameControl').style.visibility = 'hidden'
-    }
     function showNameControl() {
         document.getElementById('NameControl').style.visibility = 'visible'
         document.getElementById('IdControl').style.visibility = 'hidden'
     }
+    function showIdControl() {
+    }
+    document.getElementById('IdControl').style.visibility = 'visible'
+    document.getElementById('NameControl').style.visibility = 'hidden'
 
 </script>
+
+
+<head>
+    <title> Polling System</title>
+</head>
+
+<style>
+
+    body{
+       font-size: medium;
+        font-family: Serif;
+    }
+    h1 {
+        background: border-box;
+        background-color: skyblue;
+        color: azure;
+        align-content: center;
+        align-self: center;
+    }
+
+    button {
+        color: skyblue;
+    }
+
+    h3 {
+        color: brown;
+    }
+
+
+</style>
+
+<body>
+<h1>${message}</h1>
+<hr>
+
+<h3>
+    Welcome to polling. Give your ideas or poll for ideas
+</h3>
+
 
 <form name="Welcome" id="welcome" method="post" action="/Home/login">
     <table>
