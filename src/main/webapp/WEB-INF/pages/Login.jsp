@@ -12,9 +12,13 @@
 
 <head>
     <title> Polling System</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/Extras/jquery.js"></script>
     <link href="${pageContext.request.contextPath}/Extras/style.css" rel="stylesheet">
     <script language="JavaScript" src="${pageContext.request.contextPath}/Extras/scripts.js"></script>
 </head>
+
+
 
 
 <body>

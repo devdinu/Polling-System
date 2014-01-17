@@ -22,6 +22,8 @@ function hideLogin()
     document.getElementById("IdControl").style.visibility='hidden';
 }
 
+
+
 function showLogin()
 {
     //$("#loginWithOptin").show();
