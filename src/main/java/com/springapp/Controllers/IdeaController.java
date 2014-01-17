@@ -25,7 +25,7 @@ public class IdeaController {
     public String postIdea(ModelMap modMap, Idea idea) {
         ideaService.create(idea);
         modMap.addAttribute("message", "Posted Idea successfully. " + idea);
-        return "ViewIdeas";
+        return "Status";
     }
 
     @RequestMapping(value = "listIdeas", method = RequestMethod.GET)
